@@ -1,0 +1,20 @@
+# ------------------------------------------------------------
+# Minimal vLLM Semantic Router config (FAST WORKING VERSION)
+# ------------------------------------------------------------
+
+listeners:
+  - name: http-8888
+    type: http
+    host: 0.0.0.0
+    port: 8888
+
+providers:
+  models:
+    - name: local-vllm
+      endpoints:
+        - name: vllm-backend
+          endpoint: "host.docker.internal:8000"
+          protocol: "http"
+          weight: 1
+
+  default_model: local-vllm
