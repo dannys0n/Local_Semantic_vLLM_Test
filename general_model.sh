@@ -1,11 +1,22 @@
 docker run --runtime nvidia --gpus all \
-	--name my_vllm_general \
+	--name vllm_general_model \
 	-v ~/.cache/huggingface:/root/.cache/huggingface \
  	--env "HUGGING_FACE_HUB_TOKEN=<secret>" \
 	-p 8000:8000 \
 	--ipc=host \
 	vllm/vllm-openai:latest \
-	--model Qwen/Qwen2.5-0.5B-Instruct \
-	--gpu-memory-utilization 0.2  \
-	--max-num-seqs 128 \
-	--max-model-len 8192
+	--model Qwen/Qwen3-4B \
+	--gpu-memory-utilization 0.7  \
+	--max-num-seqs 4 \
+	--max-model-len 2048 \
+	--enforce-eager \
+	--port 8000
+
+
+	#--max-model-len 8192 \
+
+	# the following are for memory optimizations for larger models
+	#--gpu-memory-utilization \
+	#--max-num-seqs \
+	#--max-model-len \
+	#--enforce-eager \

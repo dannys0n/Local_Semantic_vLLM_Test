@@ -121,7 +121,7 @@ decisions:
         - type: "preference"
           name: "bug_fixing"
     modelRefs:
-      - model: "Qwen/Qwen2.5-0.5B-Instruct"
+      - model: "Qwen/Qwen3-4B"
         use_reasoning: true
     plugins:
       - type: "system_prompt"
@@ -138,7 +138,7 @@ decisions:
         - type: "user_feedback"
           name: "wrong_answer"
     modelRefs:
-      - model: "Qwen/Qwen2.5-0.5B-Instruct"
+      - model: "Qwen/Qwen3-4B"
         use_reasoning: true
     plugins:
       - type: "system_prompt"
@@ -156,7 +156,7 @@ decisions:
         - type: "domain"
           name: "math"
     modelRefs:
-      - model: "Qwen/Qwen2.5-0.5B-Instruct"
+      - model: "Qwen/Qwen3-4B"
         use_reasoning: true
     plugins:
       - type: "system_prompt"
@@ -176,7 +176,7 @@ decisions:
         - type: "domain"
           name: "physics"
     modelRefs:
-      - model: "Qwen/Qwen2.5-0.5B-Instruct"
+      - model: "Qwen/Qwen3-4B"
         use_reasoning: true
     plugins:
       - type: "system_prompt"
@@ -210,7 +210,7 @@ decisions:
         - type: "domain"
           name: "other"
     modelRefs:
-      - model: "Qwen/Qwen2.5-0.5B-Instruct"
+      - model: "Qwen/Qwen3-4B"
         use_reasoning: false
     plugins:
       - type: "semantic-cache"
@@ -222,8 +222,8 @@ decisions:
 providers:
   # Model configuration
   models:
-    - name: "Qwen/Qwen2.5-0.5B-Instruct"
-      #reasoning_family: "gpt-oss"
+    - name: "Qwen/Qwen3-4B"
+      reasoning_family: "qwen"
       endpoints:
         - name: "vllm_endpoint"
           weight: 1
@@ -239,11 +239,11 @@ providers:
       access_key: ""
 
   # Default model for fallback
-  default_model: "Qwen/Qwen2.5-0.5B-Instruct"
+  default_model: "Qwen/Qwen3-4B"
 
   # Reasoning families configuration
   reasoning_families:
-    gpt-oss:
+    qwen:
       type: "reasoning_effort"
       parameter: "reasoning_effort"
 
