@@ -10,9 +10,12 @@ source "$(dirname "$0")/cluster.env"
 curl -s http://${HEAD_NODE_IP}:${VLLM_PORT}/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d "{
-    \"model\": \"Qwen/Qwen3-4B\",
+    \"model\": \"google/gemma-3-4b-it\",
     \"messages\": [
-      {\"role\": \"user\", \"content\": \"make a function of adding 2 integers /no_think\"}
+      {\"role\": \"user\", \"content\": \"make a function of adding 2 integers\"}
     ],
+      \"chat_template_kwargs\": {
+    \"enable_thinking\": false
+  },
     \"max_tokens\": 1000
   }" | jq .
