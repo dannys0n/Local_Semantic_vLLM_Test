@@ -2,3 +2,4 @@
 /models
 /vsr
 /.vllm-sr
+.DS_Store
