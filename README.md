@@ -3,7 +3,9 @@
 A small test setup for **vLLM Semantic Router**: routing prompts to specialized LLM endpoints based on context (e.g. code vs general). One machine runs the router and a local endpoint; a second machine (Mac) runs another endpoint as a worker.
 
 <img width="1611" height="898" alt="setup" src="https://github.com/user-attachments/assets/fcb36bd6-cf49-471a-9778-8acfd9a63df5" />
+
 ![local-model](https://github.com/user-attachments/assets/dd0450d5-9731-4329-8edf-d074efc1aeca)
+
 ![lan-model](https://github.com/user-attachments/assets/0afd6c8f-53d4-4943-a686-10b69ac0bd10)
 
 ## What this repo does
