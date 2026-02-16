@@ -4,8 +4,10 @@ A small test setup for **vLLM Semantic Router**: routing prompts to specialized 
 
 <img width="1611" height="898" alt="setup" src="https://github.com/user-attachments/assets/fcb36bd6-cf49-471a-9778-8acfd9a63df5" />
 
+- prompt called local general model
 ![local-model](https://github.com/user-attachments/assets/dd0450d5-9731-4329-8edf-d074efc1aeca)
 
+- prompt called specialized model over network
 ![lan-model](https://github.com/user-attachments/assets/0afd6c8f-53d4-4943-a686-10b69ac0bd10)
 
 ## What this repo does
